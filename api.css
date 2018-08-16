@@ -1,0 +1,12 @@
+article {
+    margin-left:10%;
+    margin-right:10%;
+}
+
+textarea {
+    height: 10rem !important;
+}
+
+form {
+    padding:10%;
+}
