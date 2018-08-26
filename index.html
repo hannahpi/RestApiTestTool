@@ -31,25 +31,58 @@
                     </div>
                 </div>
                 <div class="form-group row">
+                    <label class="col-sm-2 col-form-label" for="requestHeaderType">Request Header Type:</label>
+                    <div class="col-sm-10">
+                        <select class="form-control" id="requestHeaderType" name="requestHeaderType">
+                            <option value="application/json">application/json</option>
+                            <option value="application/x-www-form-urlencoded">application/x-www-form-urlencoded</option>
+                            <option value="application/xml">application/xml</option>
+                            <option value="multipart/form-data">multipart/form-data</option>
+                        </select>
+                    </div>
+                </div>
+                <p>Other Header:</p>
+                <div class="form-group row">
+                    <div class="col">
+                        <label class="col-form-label" for="CHeaderName">Name:</label>
+                        <input class="form-control" id="CHeaderName" name="CHeaderName" placeholder="Custom Header Name"></input>
+                    </div>
+                    <div class="col">
+                        <label class="col-form-label" for="CHeaderData">Data:</label>
+                        <input class="form-control" id="CHeaderData" name="CHeaderData" placeholder="Custom Header Data (if needed)"></input>
+                    </div>
+                    <button class="btn btn-primary" id="btnAddHeader" onclick="addHeader(); return false;">Add Header</button>
+                </div>
+                <div class="form-group row">
+                    <div class="col">
+                        <select class="form-control" id="CHeaders" name="CHeaders" size="4"></select>
+                    </div>
+                    <div class="col-md-2">
+                        <button class="btn btn-primary" id="btnRemoveHeader" onclick="removeHeader(); return false;">Remove Header</button>
+                    </div>
+                </div>
+                <div class="form-group row">
                     <label class="col-sm-2 col-form-label" for="actiontext">Action:</label>
                     <div class="col-sm-10">
                         <input class="form-control col-sm-10" id="actiontext" name="actiontext"></input>
                     </div>
                 </div>
-                <div class="form-group row">
+                <div id="requestFormArea" class="form-group row">
                     <label class="col-sm-2 col-form-label" for="request">Request:</label>
                     <div class="col-sm-10">
                         <textarea class="form-control col-sm-10" id="request" name="request"></textarea>
                     </div>
-                </div>
+                </div> <!--requestFormArea-->
                 <div class="form-group row">
                     <div class="form-group col-sm-10">
-                        <input type="submit" class="btn btn-primary" id="submit" value="Send Request" onclick="sendIt(); return false;"></button>
+                        <input type="submit" class="btn btn-primary" id="submit" value="Send Request" onclick="sendIt(); return false;"></input>
                     </div>
                 </div>
             </form>
         </article>
         <article>
+            <input id="resultCode" class="form-control" placeholder="response codes will appear here" readonly></input>
+            <textarea id="resultHeader" class="form-control" placeholder="response header will appear here" readonly></textarea>
             <textarea id="results" class="form-control" placeholder="Results will appear here" readonly></textarea>
         </article>
     </section>
