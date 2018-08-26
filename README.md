@@ -2,7 +2,7 @@
 A simple tool written in JavaScript designed to (manually) test RESTful implementations.
 
 ## Method Support:
-Currently this tool supports GET, POST, PATCH, UPDATE, DELETE
+Currently this tool supports GET, POST, PATCH, PUT, DELETE
 
 ## Request Headers:
 Currently supported: application/json, application/x-www-url-encoded, application/xml, and multipart/form-data.  Note that file uploads are not supported.  The multipart/form-data may be unnecessary since this form probably doesn't have the correct fields for you.  Then again if you're using this tool you're probably a programmer so you know what you're doing right?  You'd have to serialize, jsonify, or xmlize the object by hand though.
